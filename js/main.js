@@ -5,8 +5,50 @@
 
 const jsList = document.querySelector('.js-list');
 
-const kittenOne = '<li class="card"> <article> <img   class="card_img" src="https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg" alt="gatito"/> <h3 class="card_title">Anastacio</h3> <p class="card_description"> Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle! </p> </article> </li>';
-const kittenTwo = '<li class="card"> <article> <img   class="card_img" src="https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg" alt="gatito"/> <h3 class="card_title">Anastacio</h3> <p class="card_description"> Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle! </p> </article> </li>';
+const nameCatOne = 'Anastacio';
+const photoCatOne = 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
+const pTextOne = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
+const breedCatOne = 'British Shorthair'; 
 
-jsList.innerHTML = kittenOne + kittenTwo;
+const nameCatTwo = 'Fiona';
+const photoCatTwo = 'https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg';
+const pTextTwo = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
+const breedCatTwo = 'British Shorthair'; 
+
+const nameCatThree = 'Cielo';
+const photoCatThree = 'https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg';
+const pTextThree = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
+const breedCatThree = 'British Shorthair'; 
+
+const kittenOne = `<li class="card"> 
+<article>
+<img class="card_img" src="${photoCatOne}" alt="gatito"/>
+<h3 class="card_title">${nameCatOne}</h3>
+<h4 class="card_race">${breedCatOne}</h4>
+<p class="card_description">${pTextOne}/p>
+</article>
+</li>`; 
+
+const kittenTwo = `<li class="card"> 
+<article>
+<img class="card_img" src="${photoCatTwo}" alt="gatito"/>
+<h3 class="card_title">${nameCatTwo}</h3>
+<h4 class="card_race">${breedCatTwo}</h4>
+<p class="card_description">${pTextTwo}/p>
+</article>
+</li>`; 
+
+
+const kittenThree = `<li class="card"> 
+<article>
+<img class="card_img" src="${photoCatThree}" alt="gatito"/>
+<h3 class="card_title">${nameCatThree}</h3>
+<h4 class="card_race">${breedCatThree}</h4>
+<p class="card_description">${pTextThree}/p>
+</article>
+</li>`; 
+
+jsList.innerHTML = kittenOne + kittenTwo + kittenThree;
+
+
 
