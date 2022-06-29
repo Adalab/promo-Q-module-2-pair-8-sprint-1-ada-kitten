@@ -3,16 +3,44 @@
 const jsNew = document.querySelector('.js-new-form'); 
 jsNew.classList.remove("collapsed");
 const plus = document.querySelector('.fa-plus-circle');
+const addButton = document.querySelector('.js-btn-add');
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMesageError = document.querySelector('.js-label-error');
+const descripSearch = document.querySelector('.js_in_search_desc')
+const breedSearch = document.querySelector('.js-input-breed');
+const searchButton = document.querySelector('.js-search-button');
+const labelSearch = document.querySelector('.js-label-error-search');
+
+
 
 plus.addEventListener("click", (event) => {
-    jsNew.classList.add("collapsed");
+    jsNew.classList.toggle("collapsed");
     
 });
 
-plus.addEventListener("click", (events) => {
-    jsNew.classList.remove ("collapsed");
-    
-});
+addButton.addEventListener("click", () => {
+    event.preventDefault()
+    const valueDesc = inputDesc.value;
+    const valuePhoto = inputPhoto.value;
+    const valueName = inputName.value;
+
+if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMesageError.innerHTML = "<p>Completa los campos obligatorios</p>";
+}
+})
+
+searchButton.addEventListener("click", () => {
+    event.preventDefault()
+    const valueDescrip = descripSearch.value;
+    const valueSearch = breedSearch.value;
+   
+if (valueDescrip === '' || valueSearch === '') {
+    labelSearch.innerHTML = "<p>Completa los campos obligatorios</p>";
+}
+})
+
 
 const jsList = document.querySelector('.js-list');
 
