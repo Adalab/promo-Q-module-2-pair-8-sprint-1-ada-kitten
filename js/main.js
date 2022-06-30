@@ -7,11 +7,31 @@ const addButton = document.querySelector('.js-btn-add');
 const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
+const inputRace = document.querySelector('.js-input-race');
 const labelMesageError = document.querySelector('.js-label-error');
 const descripSearch = document.querySelector('.js_in_search_desc')
 const breedSearch = document.querySelector('.js-input-breed');
 const searchButton = document.querySelector('.js-search-button');
 const labelSearch = document.querySelector('.js-label-error-search');
+const buttonCancelForm = document.querySelector('.js-btn-cancel');
+
+
+function renderKitten(inputPhoto, inputDesc, inputName, inputRace) {
+    let valuePhoto = inputPhoto.value;
+    let valueDesc = inputDesc.value;
+    let valueName = inputName.value;
+    let valueRace = inputRace.value;
+    
+const KittenAdd = `<li class="card">
+<article>
+<img class ="card_img" src="${valuePhoto}" alt="gatito"/>
+<h3 class="card_title">${valueName}</h3>
+<h4 class="card_race">${valueRace}</h4>
+<p class="card_description">${valueDesc}</p>
+</article>
+</li>`; 
+jsList.innerHTML += KittenAdd;
+}
 
 
 
@@ -20,7 +40,7 @@ plus.addEventListener("click", (event) => {
     
 });
 
-addButton.addEventListener("click", () => {
+addButton.addEventListener("click", (event) => {
     event.preventDefault()
     const valueDesc = inputDesc.value;
     const valuePhoto = inputPhoto.value;
@@ -29,9 +49,24 @@ addButton.addEventListener("click", () => {
 if (valueDesc === '' || valuePhoto === '' || valueName === '') {
     labelMesageError.innerHTML = "<p>Completa los campos obligatorios</p>";
 }
+else {renderKitten (inputPhoto, inputDesc, inputName, inputRace);
+
+}
+
 })
 
-searchButton.addEventListener("click", () => {
+buttonCancelForm.addEventListener("click", (cancelNewKitten) => {
+    event.preventDefault();
+    jsNew.classList.toggle("collapsed");
+})
+
+cancelNewKitten = (event) => {
+    let valuePhoto = inputPhoto.textContent.remove;
+     
+};
+
+
+searchButton.addEventListener("click", (event) => {
     event.preventDefault()
     const valueDescrip = descripSearch.value;
     const valueSearch = breedSearch.value;
@@ -61,12 +96,14 @@ const breedCatThree = 'British Shorthair';
 
 
 
+
+
 const kittenOne = `<li class="card"> 
 <article>
 <img class="card_img" src="${photoCatOne}" alt="gatito"/>
 <h3 class="card_title">${nameCatOne}</h3>
 <h4 class="card_race">${breedCatOne}</h4>
-<p class="card_description">${pTextOne}/p>
+<p class="card_description">${pTextOne}</p>
 </article>
 </li>`; 
 
@@ -75,7 +112,7 @@ const kittenTwo = `<li class="card">
 <img class="card_img" src="${photoCatTwo}" alt="gatito"/>
 <h3 class="card_title">${nameCatTwo}</h3>
 <h4 class="card_race">${breedCatTwo}</h4>
-<p class="card_description">${pTextTwo}/p>
+<p class="card_description">${pTextTwo}</p>
 </article>
 </li>`; 
 
@@ -85,11 +122,11 @@ const kittenThree = `<li class="card">
 <img class="card_img" src="${photoCatThree}" alt="gatito"/>
 <h3 class="card_title">${nameCatThree}</h3>
 <h4 class="card_race">${breedCatThree}</h4>
-<p class="card_description">${pTextThree}/p>
+<p class="card_description">${pTextThree}</p>
 </article>
 </li>`; 
 
-// jsList.innerHTML = kittenOne + kittenTwo + kittenThree;
+jsList.innerHTML = kittenOne + kittenTwo + kittenThree;
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
@@ -105,4 +142,5 @@ if( pTextTwo.includes("sociable") ) {
 if( pTextThree.includes("sociable") ) {
     jsList.innerHTML += kittenThree;
 }
+
 
