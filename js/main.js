@@ -67,6 +67,12 @@ else {renderKitten (inputPhoto, inputDesc, inputName, inputRace);
 });
 
  */
+/* $(".any-button").click(function() {
+
+    $("form")[0].reset();
+
+});
+ */
 
 
 searchButton.addEventListener("click", (event) => {
