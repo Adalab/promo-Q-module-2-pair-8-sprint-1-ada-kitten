@@ -14,6 +14,7 @@ const breedSearch = document.querySelector('.js-input-breed');
 const searchButton = document.querySelector('.js-search-button');
 const labelSearch = document.querySelector('.js-label-error-search');
 const buttonCancelForm = document.querySelector('.js-btn-cancel');
+const input = document.querySelector('.input');
 
 
 function renderKitten(inputPhoto, inputDesc, inputName, inputRace) {
@@ -35,6 +36,8 @@ jsList.innerHTML += KittenAdd;
 
 
 
+
+
 plus.addEventListener("click", (event) => {
     jsNew.classList.toggle("collapsed");
     
@@ -53,17 +56,17 @@ else {renderKitten (inputPhoto, inputDesc, inputName, inputRace);
 
 }
 
-})
+});
 
-buttonCancelForm.addEventListener("click", (cancelNewKitten) => {
+
+/* buttonCancelForm.addEventListener("click", (event) => {
     event.preventDefault();
-    jsNew.classList.toggle("collapsed");
-})
+    if (valueName === '') {
+        valueName.innerHTML = '';
+    }
+});
 
-cancelNewKitten = (event) => {
-    let valuePhoto = inputPhoto.textContent.remove;
-     
-};
+ */
 
 
 searchButton.addEventListener("click", (event) => {
