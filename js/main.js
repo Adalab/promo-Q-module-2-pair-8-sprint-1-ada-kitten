@@ -58,21 +58,28 @@ else {renderKitten (inputPhoto, inputDesc, inputName, inputRace);
 
 });
 
+const emptyForm = {
+    url: '',
+    name: '',
+    race: '',
+    desc: '',
+};
 
-/* buttonCancelForm.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (valueName === '') {
-        valueName.innerHTML = '';
-    }
+
+function resetForm() {
+    inputPhoto.value = '';
+    inputName.value = '';
+    inputRace.src = '';
+    inputDesc.value = '';
+    return emptyForm;
+}
+function cancel() {
+    resetForm();
+    
+}
+buttonCancelForm.addEventListener('click', (cancel) => {
+    jsNew.classList.toggle("collapsed");
 });
-
- */
-/* $(".any-button").click(function() {
-
-    $("form")[0].reset();
-
-});
- */
 
 
 searchButton.addEventListener("click", (event) => {
