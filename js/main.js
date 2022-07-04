@@ -1,7 +1,7 @@
 'use strict'
 
+const jsList = document.querySelector('.js-list');
 const jsNew = document.querySelector('.js-new-form'); 
-jsNew.classList.remove("collapsed");
 const plus = document.querySelector('.fa-plus-circle');
 const addButton = document.querySelector('.js-btn-add');
 const inputDesc = document.querySelector('.js-input-desc');
@@ -16,6 +16,7 @@ const labelSearch = document.querySelector('.js-label-error-search');
 const buttonCancelForm = document.querySelector('.js-btn-cancel');
 const input = document.querySelector('.input');
 
+// -------------- añadir gatito ----------------
 
 function renderKitten(inputPhoto, inputDesc, inputName, inputRace) {
     let valuePhoto = inputPhoto.value;
@@ -34,7 +35,7 @@ const KittenAdd = `<li class="card">
 jsList.innerHTML += KittenAdd;
 }
 
-
+// -------------- boton Plus -------------------
 
 plus.addEventListener("click", (event) => {
     jsNew.classList.toggle("collapsed");
@@ -56,13 +57,14 @@ else {renderKitten (inputPhoto, inputDesc, inputName, inputRace);
 
 });
 
+// --------------- boton cancel + reset --------------
+
 const emptyForm = {
     url: '',
     name: '',
     race: '',
     desc: '',
 };
-
 
 function resetForm() {
     inputPhoto.value = '';
@@ -79,6 +81,7 @@ buttonCancelForm.addEventListener('click', (cancel) => {
     jsNew.classList.toggle("collapsed");
 });
 
+// --------------- campos obligatorios ----------------
 
 searchButton.addEventListener("click", (event) => {
     event.preventDefault()
@@ -91,7 +94,7 @@ if (valueDescrip === '' || valueSearch === '') {
 })
 
 
-const jsList = document.querySelector('.js-list');
+// -------------------- Const Gatitos -------------------
 
 const nameCatOne = 'Anastacio';
 const photoCatOne = 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
@@ -107,9 +110,6 @@ const nameCatThree = 'Cielo';
 const photoCatThree = 'https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg';
 const pTextThree = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!';
 const breedCatThree = 'British Shorthair'; 
-
-
-
 
 
 const kittenOne = `<li class="card"> 
