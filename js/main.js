@@ -36,8 +36,6 @@ jsList.innerHTML += KittenAdd;
 
 
 
-
-
 plus.addEventListener("click", (event) => {
     jsNew.classList.toggle("collapsed");
     
